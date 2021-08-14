@@ -8,7 +8,7 @@ import {
 } from '../actions/contactActions';
 
 const initialState = {
-  listContacts: {},
+  listContacts: [],
 };
 
 export default (state = initialState, action) => {

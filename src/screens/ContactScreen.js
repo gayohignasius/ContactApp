@@ -110,15 +110,6 @@ const ContactScreen = props => {
       </View>
     );
   }
-  if (contacts.length === 0) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <Text>No contacts found! Insert a new one!</Text>
-        </View>
-      </View>
-    );
-  }
 
   return (
     <View style={styles.container}>
@@ -147,21 +138,27 @@ const ContactScreen = props => {
           </View>
         </View>
       </View>
-      {!isLoading && (
-        <FlatList
-          data={contacts}
-          // keyExtractor={item => item.id}
-          keyExtractor={(item, index) => item.id}
-          renderItem={({item, index}) => (
-            <ContactsItem
-              firstName={item.firstName}
-              lastName={item.lastName}
-              photo={item.photo}
-              onDeletePressed={() => onDeletePressed(item.id)}
-              onDetailPressed={() => onDetailPressed(item.id)}
-            />
-          )}
-        />
+      {contacts.length === 0 ? (
+        <View style={styles.centered}>
+          <Text>No contacts found! Insert a new one!</Text>
+        </View>
+      ) : (
+        !isLoading && (
+          <FlatList
+            data={contacts}
+            // keyExtractor={item => item.id}
+            keyExtractor={(item, index) => item.id}
+            renderItem={({item, index}) => (
+              <ContactsItem
+                firstName={item.firstName}
+                lastName={item.lastName}
+                photo={item.photo}
+                onDeletePressed={() => onDeletePressed(item.id)}
+                onDetailPressed={() => onDetailPressed(item.id)}
+              />
+            )}
+          />
+        )
       )}
     </View>
   );
