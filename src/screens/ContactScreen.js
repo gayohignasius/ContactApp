@@ -1,22 +1,19 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  Image,
-  TextInput,
-  Platform,
   ActivityIndicator,
   Alert,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,,
 } from 'react-native';
-import Tooltip from 'rn-tooltip';
-import {ContactsItem} from '../components';
+import {useTheme} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useDispatch, useSelector} from 'react-redux';
+import Tooltip from 'rn-tooltip';
+import {ContactsItem} from '../components';
 import * as contactActions from '../redux/actions/contactActions';
-import {useTheme} from 'react-native-paper';
 
 const styles = StyleSheet.create({
   container: {
