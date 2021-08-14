@@ -1,16 +1,20 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {
-  AddNewContactScreen,
-  ContactScreen,
-  DetailContactScreen,
-} from '../screens';
+import ContactScreen from '../screens/ContactScreen';
+import DetailContactScreen from '../screens/DetailContactScreen';
+import AddNewContactScreen from '../screens/AddNewContactScreen';
+import Splash from '../screens/Splash';
 
 const Stack = createStackNavigator();
 
 const Router = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Splash">
+      <Stack.Screen
+        name="Splash"
+        component={Splash}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="ContactScreen"
         component={ContactScreen}
