@@ -1,18 +1,16 @@
 /* eslint-disable no-unreachable */
 import React, {useCallback, useState} from 'react';
-import {Snackbar, useTheme} from 'react-native-paper';
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  StyleSheet,
-  Alert,
-  Button,
 } from 'react-native';
-import {TextInput} from 'react-native-paper';
+import {TextInput, useTheme} from 'react-native-paper';
 import {useDispatch} from 'react-redux';
 import * as contactActions from '../redux/actions/contactActions';
 

@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import {useCallback} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   Alert,
   KeyboardAvoidingView,
@@ -10,8 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {TextInput} from 'react-native-paper';
-import {useTheme} from 'react-native-paper';
+import {TextInput, useTheme} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
 import * as contactActions from '../redux/actions/contactActions';
 
