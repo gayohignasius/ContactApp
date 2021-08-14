@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,,
+  View,
 } from 'react-native';
 import {useTheme} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -102,9 +102,22 @@ const ContactScreen = props => {
   };
 
   if (isLoading) {
-    <View style={styles.centered}>
-      <ActivityIndicator color="#344955" size="large" />
-    </View>;
+    return (
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <ActivityIndicator color="#344955" size="large" />
+        </View>
+      </View>
+    );
+  }
+  if (contacts.length === 0) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <Text>No contacts found! Insert a new one!</Text>
+        </View>
+      </View>
+    );
   }
 
   return (
