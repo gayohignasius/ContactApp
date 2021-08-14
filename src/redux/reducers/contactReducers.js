@@ -33,17 +33,9 @@ export default (state = initialState, action) => {
         action.contactData.lastName,
         action.contactData.age,
         action.contactData.photo,
-        // state.userProducts[productIndex].price
       );
       const updatedListContacts = [...state.listContacts];
       updatedListContacts[contactIndex] = updatedContact;
-      // const updatedUserProducts = [...state.userProducts];
-      // updatedUserProducts[productIndex] = updatedProduct;
-      // const availableProductIndex = state.availableProducts.findIndex(
-      //   prod => prod.id === action.pid,
-      // );
-      // const updatedListContacts = [...state.listContacts];
-      // updatedAvailableProducts[availableProductIndex] = updatedProduct;
       return {
         ...state,
         listContacts: updatedListContacts,
